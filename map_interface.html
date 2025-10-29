@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        header{
+             background-color:#032c32;
+            
+            
+        }
+        ul{
+           list-style-type:circle;
+        padding-top: 30px;
+        padding-left: 50px;
+
+    }
+    li{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 22px;
+        padding-left: 50px;
+        color: black;
+        
+        }
+        map-container {
+            width: 800px;
+            height: 800px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        svg {
+            width: 100%;
+            height: 100%;
+        }
+        path {
+            fill: #6c7d9b;
+            stroke: #421f1f;
+            stroke-width: 1px;
+            transition: fill 0.3s ease;
+            cursor: pointer;
+        }
+        path:hover {
+            fill: #4c515a;
+        }
+        .state-label {
+            font-size: 10px;
+            fill: #333;
+            pointer-events: none;
+            text-anchor: middle;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="./img/logo1.webp" alt="logo" width="150px" height="100px">
+    </header>
+    <main>
+       <ul>
+  <li><a href="#">Andhra Pradesh</a></li>
+  <li><a href="#">Arunachal Pradesh</a></li>
+  <li><a href="#">Assam</a></li>
+  <li><a href="#">Bihar</a></li>
+  <li><a href="#">Chhattisgarh</a></li>
+  <li><a href="#">Goa</a></li>
+  <li><a href="#">Gujarat</a></li>
+  <li><a href="#">Haryana</a></li>
+  <li><a href="#">Himachal Pradesh</a></li>
+  <li><a href="#">Jharkhand</a></li>
+  <li><a href="#">Karnataka</a></li>
+  <li><a href="#">Kerala</a></li>
+  <li><a href="#">Madhya Pradesh</a></li>
+  <li><a href="#">Maharashtra</a></li>
+  <li><a href="#">Manipur</a></li>
+  <li><a href="#">Meghalaya</a></li>
+  <li><a href="#">Mizoram</a></li>
+  <li><a href="#">Nagaland</a></li>
+  <li><a href="#">Odisha</a></li>
+  <li><a href="#">Punjab</a></li>
+  <li><a href="#">Rajasthan</a></li>
+  <li><a href="#">Sikkim</a></li>
+  <li><a href="#">Tamil Nadu</a></li>
+  <li><a href="#">Telangana</a></li>
+  <li><a href="#">Tripura</a></li>
+  <li><a href="#">Uttar Pradesh</a></li>
+  <li><a href="#">Uttarakhand</a></li>
+  <li><a href="#">West Bengal</a></li>
+</ul>
+     <div id="map-container">
+    <!-- Inline SVG for India map -->
+    <div version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000">
+      <!-- Each path represents a state, with a 'data-state' and 'data-crops' attribute -->
+      <path data-state="Andhra Pradesh" data-crops="Rice, Maize, Pulses" d="M..."/>
+      <path data-state="Arunachal Pradesh" data-crops="Rice, Maize, Millet" d="M..."/>
+      <path data-state="Assam" data-crops="Tea, Rice, Jute" d="M..."/>
+      <path data-state="Bihar" data-crops="Rice, Wheat, Sugarcane" d="M..."/>
+      <path data-state="Chhattisgarh" data-crops="Rice, Maize, Pulses" d="M..."/>
+      <path data-state="Goa" data-crops="Rice, Coconut, Cashew" d="M..."/>
+      <path data-state="Gujarat" data-crops="Groundnut, Cotton, Wheat" d="M..."/>
+      <path data-state="Haryana" data-crops="Wheat, Rice, Sugarcane" d="M..."/>
+      <path data-state="Himachal Pradesh" data-crops="Wheat, Maize, Apples" d="M..."/>
+      <path data-state="Jharkhand" data-crops="Rice, Maize, Oilseeds" d="M..."/>
+      <path data-state="Karnataka" data-crops="Rice, Coffee, Sugarcane" d="M..."/>
+      <path data-state="Kerala" data-crops="Rubber, Coconut, Spices" d="M..."/>
+      <path data-state="Madhya Pradesh" data-crops="Wheat, Soyabean, Pulses" d="M..."/>
+      <path data-state="Maharashtra" data-crops="Cotton, Sugarcane, Jowar" d="M..."/>
+      <path data-state="Manipur" data-crops="Rice, Maize, Pineapple" d="M..."/>
+      <path data-state="Meghalaya" data-crops="Rice, Maize, Jute" d="M..."/>
+      <path data-state="Mizoram" data-crops="Rice, Maize, Sugarcane" d="M..."/>
+      <path data-state="Nagaland" data-crops="Rice, Maize, Pulses" d="M..."/>
+      <path data-state="Odisha" data-crops="Rice, Pulses, Oilseeds" d="M..."/>
+      <path data-state="Punjab" data-crops="Wheat, Rice, Cotton" d="M..."/>
+      <path data-state="Rajasthan" data-crops="Bajra, Wheat, Pulses" d="M..."/>
+      <path data-state="Sikkim" data-crops="Cardamom, Rice, Maize" d="M..."/>
+      <path data-state="Tamil Nadu" data-crops="Rice, Sugarcane, Cotton" d="M..."/>
+      <path data-state="Telangana" data-crops="Rice, Maize, Cotton" d="M..."/>
+      <path data-state="Tripura" data-crops="Rice, Jute, Tea" d="M..."/>
+      <path data-state="Uttar Pradesh" data-crops="Wheat, Sugarcane, Rice" d="M..."/>
+      <path data-state="Uttarakhand" data-crops="Wheat, Rice, Sugarcane" d="M..."/>
+      <path data-state="West Bengal" data-crops="Rice, Jute, Tea" d="M..."/>
+     
+    </div>
+</div>
+<div id="info-box">
+    <h3>Click a state to see its main crops</h3>
+    <p id="crop-details">Crop information will appear here.</p>
+</div>
+    </main>
+    </body>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const svg = document.querySelector('svg');
+        const infoBox = document.getElementById('info-box');
+        const cropDetails = document.getElementById('crop-details');
+
+        svg.addEventListener('click', (event) => {
+            const path = event.target;
+            if (path.tagName === 'path' && path.dataset.state) {
+                const state = path.dataset.state;
+                const crops = path.dataset.crops;
+
+                infoBox.innerHTML = `<h3>${state}</h3><p><b>Main Crops:</b> ${crops}</p>`;
+            }
+        });
+    });
+</script>
+
+</html>
